@@ -1,18 +1,18 @@
 def merge(nums1, m, nums2, n):
-    answer = []
-    a_pointer = 0
-    b_pointer = 0
-    while a_pointer < len(nums1) and b_pointer < len(nums2):
-        if nums1[a_pointer] > nums2[b_pointer]:
-            answer.append(nums2[b_pointer])
-            b_pointer += 1
+    a_pointer, b_pointer, l_pointer = m - 1, n - 1, m + n - 1
+    while b_pointer >= 0:
+        if nums1[a_pointer] > nums2[b_pointer] and a_pointer >= 0:
+            nums1[l_pointer] = nums1[a_pointer]
+            l_pointer -= 1
+            a_pointer -= 1
         else:
-            answer.append(nums1[a_pointer])
-            a_pointer += 1
-    return answer
+            nums1[l_pointer] = nums2[b_pointer]
+            l_pointer -= 1
+            b_pointer -= 1
+    return nums1
 
 
 if __name__ == '__main__':
-    print(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))
+    print(merge([2,0], 1, [1], 1))
 
 
