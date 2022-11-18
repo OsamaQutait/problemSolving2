@@ -8,18 +8,24 @@ if __name__ == '__main__':
         bm = [int(num) for num in y]
         bm.sort()
         answer = []
-        for i in range(1, m):
-            if bm[i-1] != i:
+        i = 1
+        flag = True
+        while i <= bm[-1]:
+            if i != bm[i-1]:
                 for j in range(i, bm[i-1]):
-                    if s >= j:
-                        answer.append(j)
+                    if j <= s:
+                        bm.insert(j-1, j)
                         s -= j
                     else:
+                        flag = False
                         break
-            else:
-                answer.append(i)
-        while s > answer[-1]:
-            answer.append(answer[-1]+1)
-            s -= answer[-1]+1
-
-        print(answer)
+            if not flag:
+                break
+            i += 1
+        while s >= bm[-1] + 1:
+            bm.append(bm[-1] + 1)
+            s -= bm[-1]
+        if s == 0 and flag:
+            print('yes')
+        else:
+            print('no')

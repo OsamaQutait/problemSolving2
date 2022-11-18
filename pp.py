@@ -3,7 +3,6 @@ if __name__ == '__main__':
         'Y': 'e',
         'e': 's',
         's': 'Y'
-
     }
     t = int(input())
     for i in range(t):
