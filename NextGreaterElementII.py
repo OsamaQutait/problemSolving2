@@ -13,4 +13,4 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution
-    print(s.nextGreaterElements(None, [1, 2, 1]))
+    print(s.nextGreaterElements(None, [1,3,4,2]))
