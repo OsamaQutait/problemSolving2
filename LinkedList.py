@@ -13,9 +13,9 @@ class LinkedList:
     def printLinkedList(self, head):
         if head == None:
             return
-        # print(head.data)
+        # print(head.val)
         self.printLinkedList(head.next)
-        print(head.data)
+        print(head.val)
     def reverseList(self, head):
         previous, current = None, head
         while current:

@@ -10,7 +10,7 @@ class LinkedList:
   def __init__(self):
     self.head = None
 
-  #Add new element at the end of the list
+  #Add new element at the end of the list2
   def push_back(self, newElement):
     newNode = Node(newElement)
     if(self.head == None):
@@ -22,17 +22,17 @@ class LinkedList:
         temp = temp.next
       temp.next = newNode
 
-  #display the content of the list
+  #display the content of the list2
   def PrintList(self):
     temp = self.head
     if(temp != None):
-      print("The list contains:", end=" ")
+      print("The list2 contains:", end=" ")
       while (temp != None):
-        print(temp.data, end=" ")
+        print(temp.val, end=" ")
         temp = temp.next
       print()
     else:
-      print("The list is empty.")
+      print("The list2 is empty.")
       
 class Solution:
     def reverseList(self, head: Optional[Node]) -> Optional[Node]:
@@ -43,6 +43,7 @@ class Solution:
             prev = curr
             curr = n
         return prev
+
 
 
 if __name__ == '__main__':

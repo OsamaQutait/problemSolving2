@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # t = int(input())
     # while t > 0:
     #     n = int(input())
-    #     arr = list(map(int, input().split()))
+    #     arr = list2(map(int, input().split()))
     #     my_dict = collections.Counter(arr)
     #     if len(arr) == my_dict[arr[0]] and len(arr) > 1:
     #         print("no")
