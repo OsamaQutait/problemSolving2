@@ -36,30 +36,18 @@ class LinkedList:
                 temp = temp.next
             print()
         else:
-            print("The list2 is empty.")
+            print("The list1 is empty.")
 
 
 class Solution:
-    def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        fast, slow = head, head
-        while fast and fast.next:
+    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head.next: return None
+        slow, fast = head, head.next
+        while fast.next and fast.next.next:
             fast = fast.next.next
             slow = slow.next
-        prev = None
-        while slow:
-            temp = slow.next
-            slow.next = prev
-            prev = slow
-            slow = temp
-        left, right = head, prev
-        while right:
-            if not left.val == right.val:
-                return False
-            left = left.next
-            right = right.next
-        return True
-
-
+        slow.next = slow.next.next
+        return head
 if __name__ == '__main__':
     s = Solution()
     list1 = LinkedList()
@@ -68,5 +56,8 @@ if __name__ == '__main__':
     list1.push_back(5)
     list1.push_back(3)
     list1.push_back(1)
-    # list1.push_back(1)
-    print(s.isPalindrome(list1.head))
+    list1.push_back(1)
+    list1.PrintList()
+    list1.head = s.deleteMiddle(list1.head)
+    list1.PrintList()
+
