@@ -26,6 +26,6 @@ class Solution:
         return ans
 
 if __name__ == '__main__':
-    nums = [-1, 0, 1, 2, -1, -4]
+    nums = [-1,0,1,2,-1,-4]
     solution = Solution()
     print(solution.threeSum(nums))
