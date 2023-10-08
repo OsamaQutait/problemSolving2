@@ -8,7 +8,7 @@ class Solution:
         for index1, num1 in enumerate(nums):
             if index1 > 0 and nums[index1] == nums[index1 - 1]:
                 continue
-            for index2, num2 in enumerate(nums[index1 + 1:], start=index1 + 1):  # Iterate over the entire nums array
+            for index2, num2 in enumerate(nums[index1 + 1:], start=index1 + 1):
                 print(index2)
                 if index2 > index1 + 1 and nums[index2] == nums[index2 - 1]:
                     continue
